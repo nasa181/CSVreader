@@ -17,8 +17,6 @@ public class CSV_Reader {
 		row = 0;
 		sum = 0;
 	}
-	
-	//=========== READ FILE ===========================================
 	public void readFille(String directory){
 		try {
 			in = new Scanner(new File(directory));
@@ -41,8 +39,6 @@ public class CSV_Reader {
 			row++;
 		}
 	}
-	
-	//========== calculate specific row ==================================
 	public int sumRow(int r){
 		if(r < 0 || r > data.size()){
 			JOptionPane.showMessageDialog(null, "warning", "You entered the wrong number.", JOptionPane.ERROR_MESSAGE);
@@ -60,8 +56,6 @@ public class CSV_Reader {
 		}
 		return sum;
 	}
-	
-	//======== calculate specific column =====================================
 	public int sumCol(int c){
 		if(c < 0 || c > data.get(0).size()){
 			JOptionPane.showMessageDialog(null, "Warning", "You entered the wrong number.", JOptionPane.ERROR_MESSAGE);
@@ -79,21 +73,4 @@ public class CSV_Reader {
 		}
 		return sum;
 	}
-	
-	
-	/*	
-	* ======================= How to use =============================
-	* 1.create main method >> public static void main(String[] args){}
-	* 
-	* 2.new CSV_Reader object >> CSV_Reader csv = new CSV_Reader();
-	* 
-	* 3.call method readFile with file directory >> csv.readFile("test.csv");
-	* 
-	* 4.In case of want to calculate specific row
-	* 	call method sumRow with the number of row >> csv.sumRow(0);
-	* 
-	* 5.In case of want to calculate specific column
-	* 	call method sumCol with the number if column >> csv.sumCol(0);
-	*
-	*/
 }
